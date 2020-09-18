@@ -62,7 +62,13 @@ class LinkedList:
 
         else:
             ret_value = self.tail.get_value()
-            self.tail = self.tail.get_next_node()
+
+            temp_node = self.head
+
+            while temp_node.get_next_node() is not self.tail:
+                temp_node = temp_node.get_next_node()
+            temp_node.set_next_node(None)
+            self.tail = temp_node
             return ret_value
 
     def contains(self, value):
