@@ -171,4 +171,16 @@ class DoublyLinkedList:
     """
 
     def get_max(self):
-        pass
+        cur_node = self.head
+
+        if self.head == None:
+            return 0
+
+        else:
+            max = self.head.value
+
+            while cur_node is not None:
+                if cur_node.value > max:
+                    max = cur_node.value
+                cur_node = cur_node.next
+        return max
